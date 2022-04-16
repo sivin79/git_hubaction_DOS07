@@ -9,6 +9,7 @@ env:
   AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY_ID}}
   AWS_SECRET_KEY: ${{secrets.AWS_SECRET_KEY_ID}}
   APP_TAG: "app-version-${{ github.sha }}"
+  SECRET_1: ${{secrets.SECRET_ONE}}
 
 jobs:
   my-testing:
@@ -24,8 +25,8 @@ jobs:
       - name: Show terraform version
         run: terraform --version
 
-      - name: Show Zip
-        run: zip --version
+      - name: Show secret_1
+        run: echo "secret_1 = ${{ env.SECRET_1 }}"
 
       - name: Show SHA
         run: echo "app-ver = ${{ env.APP_TAG }}"
