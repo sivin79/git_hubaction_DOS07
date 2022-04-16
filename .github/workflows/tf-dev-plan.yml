@@ -53,5 +53,6 @@ jobs:
 
       - name: "Show hash"
         id: hash
+
         run: echo "hash tag = ${{ var.APP_TAG }}"
         working-directory: ${{ env.WORKING_DIRECTORY }}
