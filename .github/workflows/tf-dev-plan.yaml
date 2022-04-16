@@ -50,3 +50,8 @@ jobs:
         id: plan
         run: terraform plan -no-color -out plan.out
         working-directory: ${{ env.WORKING_DIRECTORY }}
+
+      - name: "Show hash"
+        id: hash
+        run: echo "hash = ${{ var.APP_TAG }}"
+        working-directory: ${{ env.WORKING_DIRECTORY }}
